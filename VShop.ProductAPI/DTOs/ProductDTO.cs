@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using VShop.ProductAPI.Models;
 
 namespace VShop.ProductAPI.DTOs
@@ -12,8 +13,7 @@ namespace VShop.ProductAPI.DTOs
         [MaxLength(100)]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "O preço é obrigatório")] // data anotattion
-    
+        [Required(ErrorMessage = "O preço é obrigatório")] // data anotattion    
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "A descrição é obrigatória")] // data anotattion
@@ -25,9 +25,11 @@ namespace VShop.ProductAPI.DTOs
         [Range(0,9999)]
         public long Stock { get; set; }
         public string? ImageURL { get; set; }
+        public string? CategoryName { get; set; }
+
+        [JsonIgnore]
         public Category? Category { get; set; }
         public int CategoryId { get; set; }
-
-        public string? CategoryName { get; set; }
+    
     }
 }
