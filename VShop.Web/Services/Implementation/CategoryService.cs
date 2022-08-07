@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Headers;
+using System.Text.Json;
 using VShop.Web.Models;
 using VShop.Web.Services.Contracts;
 
@@ -17,9 +18,11 @@ namespace VShop.Web.Services.Implementation
             _httpClientFactory = httpClientFactory;
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         }
-        public async Task<IEnumerable<CategoryViewModel>> GetAllCategories()
+        public async Task<IEnumerable<CategoryViewModel>> GetAllCategories(string token)
         {
             var client = _httpClientFactory.CreateClient(clientName);
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             using (var response = await client.GetAsync(apiEndpoint)) 
             {

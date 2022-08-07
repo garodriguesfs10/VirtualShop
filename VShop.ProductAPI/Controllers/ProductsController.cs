@@ -8,8 +8,7 @@ using VShop.ProductAPI.Services.Interfaces;
 namespace VShop.ProductAPI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
+    [ApiController]  
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -44,6 +43,7 @@ namespace VShop.ProductAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Admin)]
         public async Task<ActionResult> Post([FromBody] ProductDTO ProductDTO)
         {
             if (ProductDTO == null) return BadRequest("Dados inválidos");
@@ -54,6 +54,7 @@ namespace VShop.ProductAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = Role.Admin)]
         public async Task<ActionResult> Put([FromBody] ProductDTO ProductDTO)
         {          
             if (ProductDTO == null) return BadRequest();
