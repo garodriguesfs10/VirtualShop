@@ -3,7 +3,7 @@ Loja online usando:
 - MicroServiços 
 - Asp.Net MVC (Razor View) 
 - .NET Core 6 
-- Docker 
+- AutoMapper 
 - OAuth 2.0 
 - IdentityServer 
 - EF Core 
