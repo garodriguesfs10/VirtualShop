@@ -115,7 +115,7 @@ public class CartService : ICartService
     {
         throw new NotImplementedException();
     }
-    public Task<bool> ApplyCouponAsync(CartViewModel cartVM, string couponCode, string token)
+    public Task<bool> ApplyCouponAsync(CartViewModel cartVM, string token)
     {
         throw new NotImplementedException();
     }

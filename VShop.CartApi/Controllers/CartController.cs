@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using VShop.CartApi.DTOs;
 using VShop.CartApi.Repositories;
 
@@ -55,5 +56,31 @@ public class CartController : ControllerBase
             return BadRequest();
 
         return Ok(status);
+    }
+
+    [HttpPost("applycoupon")]
+    public async Task<ActionResult<CartDTO>> ApplyCoupon(CartDTO cartDTO) 
+    {
+        var result = await _repository.ApplyCouponAsync(cartDTO.CartHeader.UserId, cartDTO.CartHeader.CouponCode);
+
+        if (!result) 
+        {
+            return NotFound($"Carrinho não encontrado para o usuario {cartDTO.CartHeader.UserId}");
+        }
+
+        return Ok(result);
+    }
+
+    [HttpDelete("deletecoupon/{userId}")]
+    public async Task<ActionResult<CartDTO>> DeleteCoupon(string userId)
+    {
+        var result = await _repository.DeleteCouponAsync(userId);
+
+        if (!result)
+        {
+            return NotFound($"Discount Coupon not found for userId = {userId}");
+        }
+
+        return Ok(result);
     }
 }
