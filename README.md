@@ -15,3 +15,4 @@ Features:
 - Autenticação e autorização - IdentityServer / JWT
 
 Projeto em andamento
+Em breve vídeo do projeto em funcionamento.
