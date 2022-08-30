@@ -12,7 +12,7 @@ Features:
 - API de produto
 - API de carrinho
 - API de desconto
-- Autenticação e autorização - IdentityServer / JWT
+- API de Autenticação e Autorização - IdentityServer
 
 Projeto em andamento
 Em breve vídeo do projeto em funcionamento.
