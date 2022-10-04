@@ -14,5 +14,8 @@ Features:
 - API de desconto
 - API de Autenticação e Autorização - IdentityServer
 
-Projeto em andamento
-Em breve vídeo do projeto em funcionamento.
+Projeto em funcionamento:
+
+https://user-images.githubusercontent.com/44370579/193835340-d5b8623c-6e86-4e0b-a533-b68d87377841.mp4
+
+
