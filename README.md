@@ -1,5 +1,6 @@
 # VirtualShop
-Loja online usando: 
+Loja online usando:
+
 - MicroServiços 
 - Asp.Net MVC (Razor View) 
 - .NET Core 6 
